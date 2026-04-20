@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>聆音承彰 · 新疆十二木卡姆非遗传承</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Serif SC', system-ui, sans-serif;
+            background-color: #FEF8EC;
+            color: #2E241F;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --terracotta: #C55A3B;
+            --golden-sand: #E3B87C;
+            --oasis-green: #3C6E5F;
+            --ink-brown: #3A2C24;
+            --slate-soft: #6B5A4E;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        header {
+            background-color: rgba(254, 248, 236, 0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(197, 90, 59, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .team-logo-img {
+            height: 52px;
+            width: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: var(--terracotta);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .logo-text h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: var(--terracotta);
+            line-height: 1.2;
+        }
+        .logo-text p {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--slate-soft);
+            margin-top: 4px;
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        nav a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--ink-brown);
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: var(--terracotta);
+            border-bottom: 2px solid var(--golden-sand);
+        }
+        .hero {
+            padding: 80px 0 70px;
+            background: linear-gradient(120deg, #FDF3E3 0%, #F9E9D4 100%);
+            position: relative;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-content h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            font-family: 'Noto Serif SC', serif;
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-content h2 span {
+            background: linear-gradient(135deg, #C55A3B, #E3B87C);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero-quote {
+            font-size: 1.2rem;
+            color: var(--ink-brown);
+            border-left: 5px solid var(--golden-sand);
+            padding-left: 24px;
+            margin: 24px 0;
+            font-weight: 500;
+            background: rgba(227, 184, 124, 0.1);
+            border-radius: 0 20px 20px 0;
+        }
+        .hero p {
+            color: #4A3B32;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .hero-image {
+            flex: 0.9;
+            text-align: center;
+        }
+        .hero-img-place {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 32px;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+            background: #D9C5A7;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--terracotta);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            background-color: #A5462C;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--terracotta);
+            color: var(--terracotta);
+            margin-left: 12px;
+        }
+        .btn-outline:hover {
+            background: var(--terracotta);
+            color: white;
+        }
+        section {
+            padding: 70px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            position: relative;
+            color: var(--ink-brown);
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--golden-sand);
+            margin: 14px auto 0;
+            border-radius: 4px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .heritage-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(197, 90, 59, 0.15);
+        }
+        .heritage-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 32px -16px rgba(0,0,0,0.15);
+        }
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            background-color: #E8D9C6;
+        }
+        .img-muqam-dutar { background: linear-gradient(145deg, #BC7A4C, #D9AE7A); }
+        .img-muqam-instrument { background: linear-gradient(145deg, #6F4E34, #B07D54); }
+        .img-muqam-dance { background: linear-gradient(145deg, #C36F47, #E1B280); }
+        .card-content {
+            padding: 24px;
+        }
+        .heritage-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--terracotta);
+        }
+        .tag {
+            display: inline-block;
+            background: #F7E5D3;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-bottom: 12px;
+        }
+        .stats {
+            background: linear-gradient(135deg, #F3E9DA, #FDF3E3);
+            margin: 20px 0;
+        }
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            gap: 36px;
+        }
+        .stat-item h4 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--oasis-green);
+            margin-bottom: 8px;
+        }
+        .stat-item p {
+            color: #5D4A3A;
+            font-weight: 500;
+        }
+        .poetry-section {
+            background-color: #FFF8EF;
+            border-radius: 48px;
+            margin: 20px 0;
+            padding: 40px 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+        .quote-block {
+            font-size: 1.18rem;
+            line-height: 1.7;
+            color: #3E2F26;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .quote-block p {
+            margin-bottom: 20px;
+        }
+        .instrument-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin: 35px 0 20px;
+        }
+        .instrument-badge {
+            background: var(--golden-sand);
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #2E241F;
+            font-size: 0.9rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .gallery-item {
+            flex: 1 1 220px;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #F0E2D0;
+            text-align: center;
+            padding: 12px;
+        }
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 24px;
+            background: #CBAF87;
+        }
+        .logo-footer-area {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
+            border-radius: 50%;
+            border: 3px solid var(--terracotta);
+            padding: 4px;
+            background: white;
+        }
+        footer {
+            background-color: #2E241F;
+            color: #CFC5B8;
+            padding: 48px 0 32px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        footer .logo-text h1 {
+            color: var(--golden-sand);
+            font-size: 1.5rem;
+        }
+        @media (max-width: 780px) {
+            .hero-grid { flex-direction: column; text-align: center; }
+            .hero-content h2 { font-size: 2rem; }
+            .hero-quote { border-left: none; border-top: 3px solid var(--golden-sand); padding-top: 16px; }
+            .header-flex { flex-direction: column; text-align: center; }
+            nav ul { gap: 1rem; justify-content: center; }
+            .section-title { font-size: 1.8rem; }
+            .stat-item h4 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container header-flex">
+        <div class="logo-area">
+            <img class="team-logo-img" src="images/team-logo.png" alt="聆音承彰团队Logo" onerror="this.src='https://placehold.co/100x100?text=Logo'">
+            <div class="logo-text">
+                <h1>聆音承彰</h1>
+                <p>十二木卡姆 · 丝路回响</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">木卡姆十二套</a></li>
+                <li><a href="#">乐器与传承</a></li>
+                <li><a href="#">数字守护</a></li>
+                <li><a href="#">乡音地图</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h2>在新疆，有一种旋律<br>传唱了<span>千年</span></h2>
+                <div class="hero-quote">
+                    “它不是一首简单的歌，是集歌、舞、乐于一体的大型古典套曲，<br>
+                    是维吾尔族先辈，把生活、爱情、山川、岁月，都揉进旋律里的浪漫。”
+                </div>
+                <p>它就是——<strong>十二木卡姆</strong>。十二套大曲，二十四首序曲，七十二首间奏曲，两百多首歌谣，<br>
+                完整演奏完一套，要整整二十多个小时。没有华丽的编曲，只有都塔尔、弹布尔、萨它尔的浅吟低唱，<br>
+                传承人开口的瞬间，就能把人拉进广袤的戈壁、温柔的绿洲。</p>
+                <a href="#" class="btn">聆听木卡姆选段 →</a>
+                <a href="#" class="btn btn-outline">探索非遗档案</a>
+            </div>
+            <div class="hero-image">
+                <img class="hero-img-place" src="images/muqam-hero.jpg" alt="十二木卡姆乐师演奏" onerror="this.src='https://placehold.co/500x400?text=十二木卡姆·演奏场景'">
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <h2 class="section-title">十二木卡姆 · 音乐活化石</h2>
+            <div class="card-grid">
+                <div class="heritage-card">
+                    <div class="card-img img-muqam-dutar"></div>
+                    <div class="card-content">
+                        <span class="tag">十二套大曲</span>
+                        <h3>琼乃额曼</h3>
+                        <p>大曲部分，庄重深沉，以古典诗歌和哲理歌词为主，展现木卡姆的宏大叙事与哲学意境。</p>
+                    </div>
+                </div>
+                <div class="heritage-card">
+                    <div class="card-img img-muqam-instrument"></div>
+                    <div class="card-content">
+                        <span class="tag">乐器 · 魂</span>
+                        <h3>都塔尔 · 弹布尔 · 萨它尔</h3>
+                        <p>弹拨间流淌着绿洲与戈壁的对话，都塔尔浑厚，弹布尔清脆，萨它尔苍凉，共同织就木卡姆的灵魂。</p>
+                    </div>
+                </div>
+                <div class="heritage-card">
+                    <div class="card-img img-muqam-dance"></div>
+                    <div class="card-content">
+                        <span class="tag">诗·乐·舞</span>
+                        <h3>达斯坦 & 麦西热甫</h3>
+                        <p>叙事民歌与欢快舞蹈部分，将民间故事、爱情与庆典融入节奏，木卡姆不仅是音乐，更是流动的盛宴。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4>12套</h4>
+                    <p>大型古典套曲</p>
+                </div>
+                <div class="stat-item">
+                    <h4>24+72</h4>
+                    <p>序曲 · 间奏曲</p>
+                </div>
+                <div class="stat-item">
+                    <h4>200+</h4>
+                    <p>歌谣与唱词</p>
+                </div>
+                <div class="stat-item">
+                    <h4>20+小时</h4>
+                    <p>完整演奏时长</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="poetry-section">
+                <div class="quote-block">
+                    <p>🎵 听的是旋律，品的是新疆的烟火与风骨。<br>
+                    它是联合国非遗，是新疆的音乐活化石，是口传心授、代代相传的文化根脉。<br>
+                    没有复杂的技巧，却藏着最真挚的情感，是老一辈人的青春，是刻在新疆人骨子里的乡愁。</p>
+                    <p>🌾 很多人来过新疆，却没真正听过十二木卡姆；<br>
+                    很多人知道非遗，却不知道这份温柔又厚重的旋律。<br>
+                    它不该被遗忘，不该只存在于博物馆里，它是流动的、鲜活的，<strong>是属于每一个热爱传统文化的人的宝藏。</strong></p>
+                    <p style="font-weight: 600; color: var(--terracotta);">愿更多人，能听见这份跨越千年的浪漫，读懂新疆独有的音乐诗意 🌿</p>
+                </div>
+                <div class="instrument-list">
+                    <span class="instrument-badge">🎻 都塔尔</span>
+                    <span class="instrument-badge">🪕 弹布尔</span>
+                    <span class="instrument-badge">🎶 萨它尔</span>
+                    <span class="instrument-badge">🥁 达甫手鼓</span>
+                    <span class="instrument-badge">📜 口传心授</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">影像·木卡姆瞬间</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img class="gallery-img" src="images/muqam-scene1.jpg" alt="木卡姆演奏者" onerror="this.src='https://placehold.co/300x300?text=乐师+弹唱'">
+                    <p style="margin-top: 12px;">民间传承人弹唱</p>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-img" src="images/muqam-instruments.jpg" alt="都塔尔与弹布尔" onerror="this.src='https://placehold.co/300x300?text=都塔尔·弹布尔'">
+                    <p style="margin-top: 12px;">传统乐器合奏</p>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-img" src="images/muqam-dance.jpg" alt="麦西热甫舞蹈" onerror="this.src='https://placehold.co/300x300?text=麦西热甫'">
+                    <p style="margin-top: 12px;">麦西热甫 · 欢歌</p>
+                </div>
+            </div>
+            <div class="logo-footer-area">
+                <img class="footer-logo-img" src="images/team-logo.png" alt="聆音承彰·文化传承Logo" onerror="this.src='https://placehold.co/100x100?text=聆音承彰'">
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: #7D6553; font-size: 0.85rem;">聆音承彰团队 · 让木卡姆被看见、被听见</p>
+        </div>
+    </section>
+    <section style="background: #FEF3E6; margin-top: 10px;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">守护，从聆听开始</h2>
+            <p style="max-width: 680px; margin: 0 auto 30px; color: #5D4536;">每一段木卡姆旋律都承载着绿洲的记忆与血脉。邀您一同关注十二木卡姆数字化保护，让丝路回响永续。</p>
+            <a href="#" class="btn">加入“聆音承彰”守护计划 →</a>
+            <p style="margin-top: 28px; font-size: 0.8rem;">🎧 聆听十二木卡姆 · 数字非遗体验即将上线</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <div class="logo-area" style="justify-content: center; margin-bottom: 24px;">
+            <img class="team-logo-img" src="images/team-logo.png" alt="聆音承彰" style="height: 55px;" onerror="this.src='https://placehold.co/100x100?text=Logo'">
+            <div class="logo-text">
+                <h1 style="color: var(--golden-sand);">聆音承彰</h1>
+                <p style="color: #B8A588;">新疆十二木卡姆 · 数字文化传承</p>
+            </div>
+        </div>
+        <p>© 2026 聆音承彰非遗数字馆 | 传承千年乐韵，共守丝路文脉</p>
+        <p style="font-size: 0.75rem; margin-top: 12px;">🌄 “它不该被遗忘，它是流动的、鲜活的宝藏”</p>
+        <p style="font-size: 0.7rem;">📧 contact@lingyinmuqam.com  |  新疆 · 乌鲁木齐</p>
+        <p style="font-size: 0.7rem; margin-top: 16px;">* 页面所有图片均为示意</p>
+    </div>
+</footer>
+</body>
+</html>
